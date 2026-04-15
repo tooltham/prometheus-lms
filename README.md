@@ -83,4 +83,4 @@ npm start
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 👥 Contributors
-Developed by **อภิรักษ์ Tooltham** for the Nakhon Phanom University community.
+Developed by **Dr. Apirak Tooltham** for the Nakhon Phanom University community.
