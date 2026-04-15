@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import { FaGraduationCap, FaEnvelope, FaArrowRight, FaArrowLeft } from 'react-icons/fa';
+import { FaEnvelope, FaArrowRight, FaArrowLeft } from 'react-icons/fa';
 import API from '../../utils/api';
 import { useLanguage } from '../../store/LanguageContext';
 import { NPUButton } from '../../components/UI/UIComponents';
@@ -47,7 +47,11 @@ const ForgotPassword = () => {
 
       <div className="auth-card glass fade-in">
         <div className="auth-header">
-          <FaGraduationCap className="auth-logo-icon" />
+          <img 
+            src="https://upload.wikimedia.org/wikipedia/th/a/a3/Nakhon_Phanom_University_Logo.svg" 
+            alt="NPU Logo" 
+            className="auth-logo-img" 
+          />
           <h2>PROMETHEUS LMS</h2>
           <p>{lang === 'th' ? 'กู้คืนรหัสผ่านของคุณ' : 'Recover your password'}</p>
         </div>

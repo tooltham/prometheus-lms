@@ -16,6 +16,13 @@
   margin-bottom: 2.5rem;
 }
 
+.auth-logo-img {
+  height: 80px;
+  width: auto;
+  margin-bottom: 1.5rem;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2));
+}
+
 .auth-logo-icon {
   font-size: 4rem;
   color: var(--npu-gold);

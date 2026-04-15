@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FaClock, FaArrowLeft } from 'react-icons/fa';
+import { FaArrowLeft } from 'react-icons/fa';
 import { NPUButton } from '../../components/UI/UIComponents';
 import { useLanguage } from '../../store/LanguageContext';
 import './Auth.css';
@@ -13,7 +13,11 @@ const WaitingForApproval = () => {
         <div className="auth-page npu-gradient flex-center">
             <div className="auth-card glass fade-in" style={{ maxWidth: '600px' }}>
                 <div className="auth-header">
-                    <FaClock className="auth-logo-icon" style={{ color: 'var(--npu-gold)' }} />
+                    <img 
+                        src="https://upload.wikimedia.org/wikipedia/th/a/a3/Nakhon_Phanom_University_Logo.svg" 
+                        alt="NPU Logo" 
+                        className="auth-logo-img" 
+                    />
                     <h2 style={{ fontSize: '2rem' }}>
                         {lang === 'th' ? 'สมัครสมาชิกสำเร็จ!' : 'Registration Successful!'}
                     </h2>
