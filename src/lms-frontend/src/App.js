@@ -1,30 +1,53 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
+import Login from './pages/Auth/Login';
+import Register from './pages/Auth/Register';
+import ForgotPassword from './pages/Auth/ForgotPassword';
+import WaitingForApproval from './pages/Auth/WaitingForApproval';
 import MainLayout from './components/Layout/MainLayout';
+import PrivateRoute from './components/PrivateRoute';
 import Dashboard from './pages/Dashboard/Dashboard';
-
-// Placeholder pages for construction
-const Courses = () => <div className="fade-in"><h2>📚 My Courses</h2><p>Course list coming soon...</p></div>;
-const Profile = () => <div className="fade-in"><h2>👤 My Profile</h2><p>Profile management coming soon...</p></div>;
-const Settings = () => <div className="fade-in"><h2>⚙️ Settings</h2><p>Application settings coming soon...</p></div>;
+import CoursesPage from './pages/Courses/CoursesPage';
+import CourseDetail from './pages/Courses/CourseDetail';
+import ProfilePage from './pages/Profile/ProfilePage';
+import SettingsPage from './pages/Settings/SettingsPage';
+import InstructorPortal from './pages/Instructor/InstructorPortal';
+import AdminPanel from './pages/Admin/AdminPanel';
 
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<MainLayout />}>
+      {/* Public routes */}
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/forgot-password" element={<ForgotPassword />} />
+      <Route path="/waiting-approval" element={<WaitingForApproval />} />
+
+      {/* Protected routes — wrapped with PrivateRoute auth guard */}
+      <Route
+        path="/"
+        element={
+          <PrivateRoute>
+            <MainLayout />
+          </PrivateRoute>
+        }
+      >
         <Route index element={<Navigate to="/dashboard" replace />} />
         <Route path="dashboard" element={<Dashboard />} />
-        <Route path="courses" element={<Courses />} />
-        <Route path="profile" element={<Profile />} />
-        <Route path="settings" element={<Settings />} />
+        <Route path="courses" element={<CoursesPage />} />
+        <Route path="courses/:id" element={<CourseDetail />} />
+        <Route path="profile" element={<ProfilePage />} />
+        <Route path="settings" element={<SettingsPage />} />
+        <Route path="instructor" element={<InstructorPortal />} />
+        <Route path="admin" element={<AdminPanel />} />
       </Route>
-      
+
       {/* 404 Route */}
       <Route path="*" element={
-        <div className="flex-center" style={{ height: '100vh', flexDirection: 'column' }}>
-          <h1>404</h1>
-          <p>Page Not Found</p>
-          <a href="/" style={{ color: 'var(--npu-gold)', marginTop: '1rem' }}>Return Home</a>
+        <div className="flex-center" style={{ height: '100vh', flexDirection: 'column', gap: '1rem' }}>
+          <h1 style={{ fontSize: '4rem', color: 'var(--npu-navy)' }}>404</h1>
+          <p style={{ color: 'var(--text-secondary)' }}>Page Not Found</p>
+          <a href="/" style={{ color: 'var(--npu-gold)', textDecoration: 'none', fontWeight: 600 }}>← Return Home</a>
         </div>
       } />
     </Routes>

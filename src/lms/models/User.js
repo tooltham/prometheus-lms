@@ -21,6 +21,34 @@ const userSchema = new mongoose.Schema({
     trim: true,
     match: [/^\S+@\S+\.\S+$/, 'Please enter a valid email']
   },
+  studentId: {
+    type: String,
+    unique: true,
+    sparse: true, // Allow nulls for non-students (admin/instructors)
+    trim: true
+  },
+  educationLevel: {
+    type: String,
+    enum: ['ประกาศนียบัตรวิชาชีพ', 'ประกาศนียบัตรวิชาชีพชั้นสูง', 'ปริญญาตรี']
+  },
+  department: {
+    type: String,
+    enum: [
+      'ช่างไฟฟ้า', 
+      'ช่างอิเล็กทรอนิกส์', 
+      'ช่างยนต์', 
+      'การบัญชี', 
+      'การตลาด', 
+      'เทคโนโลยีธุรกิจดิจิทัล', 
+      'เทคนิคเครื่องกล', 
+      'วิศวกรรมหุ่นยนต์และระบบอัตโนมัติ', 
+      'วิศวกรรมซ่อมบำรุงอุตสาหกรรมและระบบอัตโนมัติ'
+    ]
+  },
+  isApproved: {
+    type: Boolean,
+    default: false
+  },
   password: {
     type: String,
     required: [true, 'Password is required'],

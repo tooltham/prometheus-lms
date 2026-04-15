@@ -11,8 +11,10 @@
 - **🎨 NPU Premium UI**: Styled with Royal Navy (`#0d2750`) and Gold (`#c8a415`) color palette.
 - **🌐 Multilingual**: Seamlessly switch between Thai and English UI.
 - **📱 Fully Responsive**: Optimized for desktop, tablet, and mobile viewing.
+- **🛡️ User Approval System**: Mandatory account verification by Instructors/Admins for new student registrations.
+- **🎓 Student-Specific Profiles**: Comprehensive registration including Student ID, Education Level, and Academic Major.
+- **🔒 Enhanced Security**: Password change verification and secure session management.
 - **📊 Study Analytics**: Visualized learning progress with interactive charts.
-- **🛡️ Secure Backend**: Built-in JWT authentication and Role-Based Access Control (RBAC).
 
 ---
 

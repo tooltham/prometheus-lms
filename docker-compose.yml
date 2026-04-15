@@ -1,0 +1,56 @@
+
+services:
+  mongodb:
+    image: mongo:6.0
+    container_name: npu-lms-mongodb
+    restart: always
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+    networks:
+      - npu-lms-network
+
+  backend:
+    build:
+      context: ./src/lms
+      dockerfile: Dockerfile
+    container_name: npu-lms-backend
+    restart: always
+    ports:
+      - "3000:3000"
+    environment:
+      - PORT=3000
+      - MONGODB_URI=mongodb://mongodb:27017/prometheus_lms
+      - JWT_SECRET=${JWT_SECRET:-npu_premium_secret_key_2026_m2max}
+      - JWT_EXPIRE=24h
+      - NODE_ENV=development
+    depends_on:
+      - mongodb
+    volumes:
+      - ./src/lms/uploads:/app/uploads
+    networks:
+      - npu-lms-network
+
+  frontend:
+    build:
+      context: ./src/lms-frontend
+      dockerfile: Dockerfile
+      args:
+        - REACT_APP_API_URL=${REACT_APP_API_URL:-http://localhost:3000/api}
+    container_name: npu-lms-frontend
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      - backend
+    networks:
+      - npu-lms-network
+
+networks:
+  npu-lms-network:
+    driver: bridge
+
+volumes:
+  mongodb_data:
+  uploads:

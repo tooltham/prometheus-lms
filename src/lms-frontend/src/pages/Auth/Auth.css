@@ -1,0 +1,133 @@
+.auth-page {
+  min-height: 100vh;
+  width: 100%;
+  padding: 2rem;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 450px;
+  padding: 3rem;
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+
+.auth-header {
+  margin-bottom: 2.5rem;
+}
+
+.auth-logo-icon {
+  font-size: 4rem;
+  color: var(--npu-gold);
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.2));
+}
+
+.auth-header h2 {
+  color: white;
+  letter-spacing: 2px;
+  font-weight: 800;
+  margin-bottom: 0.5rem;
+}
+
+.auth-header p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
+}
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 1.25rem;
+  color: var(--npu-navy);
+  font-size: 1.1rem;
+}
+
+.input-group input, 
+.input-group select,
+.npu-select {
+  width: 100%;
+  padding: 1rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  font-family: inherit;
+  font-size: 1rem;
+  outline: none;
+  transition: all var(--transition-fast);
+  background-color: white;
+  appearance: none; /* Modern look for select */
+}
+
+/* Adjust padding for inputs with icons */
+.input-group.has-icon input {
+  padding-left: 3.5rem;
+}
+
+.input-group input:focus,
+.npu-select:focus {
+  border-color: var(--npu-gold);
+  box-shadow: 0 0 0 4px rgba(200, 164, 21, 0.15);
+}
+
+.auth-submit {
+  width: 100%;
+  padding: 1rem !important;
+  font-size: 1.1rem !important;
+  margin-top: 1rem;
+}
+
+.auth-error {
+  background: #ffcdd2; /* Light red background for contrast */
+  color: #b71c1c; /* Maroon / Dark crimson red text */
+  padding: 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.95rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+  border: 1px solid #ef5350;
+}
+
+.auth-footer {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.auth-footer p, .auth-footer a {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.auth-footer a {
+  color: #fce883; /* Brighter gold for better visibility */
+  font-weight: 600;
+  transition: all var(--transition-fast);
+}
+
+.auth-footer a:hover {
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+/* Custom Select Dropdown Arrow */
+.input-group select {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none' stroke='%230d2750' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1.2rem;
+  padding-right: 3rem;
+  cursor: pointer;
+}

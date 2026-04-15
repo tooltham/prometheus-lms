@@ -8,7 +8,9 @@ const {
   updateUserProfile,
   deleteUser,
   getAllUsers,
-  getUserById
+  getUserById,
+  changePassword,
+  approveUser
 } = require('../controllers/userController');
 
 // Public routes
@@ -23,9 +25,11 @@ router.use(authenticate);
 router.get('/profile', getUserProfile);
 router.put('/profile', updateUserProfile);
 router.delete('/profile', deleteUser);
+router.put('/change-password', changePassword);
 
 // Admin routes
 router.get('/', authenticate, require('../middleware/roleCheck').isAdmin, getAllUsers);
 router.get('/:id', authenticate, require('../middleware/roleCheck').isAdmin, getUserById);
+router.put('/approve/:id', authenticate, require('../middleware/roleCheck').isInstructor, approveUser);
 
 module.exports = router;

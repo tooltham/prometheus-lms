@@ -41,11 +41,4 @@ const enrollmentSchema = new mongoose.Schema({
 // Unique constraint
 enrollmentSchema.index({ user: 1, course: 1 }, { unique: true });
 
-// Virtual for course details
-enrollmentSchema.virtual('course', {
-  ref: 'Course',
-  localField: 'course',
-  foreignField: '_id'
-});
-
 module.exports = mongoose.model('Enrollment', enrollmentSchema);

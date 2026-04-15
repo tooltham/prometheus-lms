@@ -77,3 +77,13 @@ body {
 .bg-navy {
   background-color: var(--npu-navy);
 }
+
+/* Global Link Styles */
+a {
+  text-decoration: none;
+  transition: all var(--transition-fast);
+}
+
+a:hover {
+  text-decoration: none;
+}

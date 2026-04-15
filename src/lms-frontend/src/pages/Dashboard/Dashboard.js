@@ -1,24 +1,26 @@
-import React from 'react';
-import { 
-  FaBookOpen, 
-  FaAward, 
-  FaClock, 
-  FaChevronRight 
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import {
+  FaBookOpen,
+  FaAward,
+  FaClock,
+  FaChevronRight
 } from 'react-icons/fa';
-import { 
-  BarChart, 
-  Bar, 
-  XAxis, 
-  YAxis, 
-  CartesianGrid, 
-  Tooltip, 
-  ResponsiveContainer 
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer
 } from 'recharts';
 import { NPUCard, NPUButton } from '../../components/UI/UIComponents';
 import { useLanguage } from '../../store/LanguageContext';
+import API from '../../utils/api';
 import './Dashboard.css';
 
-const data = [
+const weekData = [
   { name: 'Mon', hours: 2 },
   { name: 'Tue', hours: 5 },
   { name: 'Wed', hours: 3 },
@@ -30,13 +32,33 @@ const data = [
 
 const Dashboard = () => {
   const { t } = useLanguage();
+  const navigate = useNavigate();
+  const [courses, setCourses] = useState([]);
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const storedUser = JSON.parse(localStorage.getItem('user') || '{}');
+        setUser(storedUser);
+
+        // Fixed: use /courses/my-courses (was /courses/enrolled — broken route)
+        const { data } = await API.get('/courses/my-courses');
+        setCourses(data);
+      } catch (err) {
+        console.error('Failed to fetch dashboard data', err);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   return (
     <div className="dashboard-container fade-in">
       <div className="dashboard-welcome">
         <div className="welcome-text">
-          <h1>{t('welcome')}, อภิรักษ์! 👋</h1>
-          <p>{t('todayTask', { count: 3 })}</p>
+          <h1>{t('welcome')}, {user?.firstName || 'อภิรักษ์'}! 👋</h1>
+          <p>{t('todayTask', { count: courses.length > 0 ? courses.length : 3 })}</p>
         </div>
         <NPUButton variant="accent">{t('viewSchedule')}</NPUButton>
       </div>
@@ -45,21 +67,21 @@ const Dashboard = () => {
         <div className="stat-card glass">
           <div className="stat-icon navy-bg"><FaBookOpen /></div>
           <div className="stat-info">
-            <span className="stat-value">12</span>
+            <span className="stat-value">{courses.length}</span>
             <span className="stat-label">{t('enrolledCourses')}</span>
           </div>
         </div>
         <div className="stat-card glass">
           <div className="stat-icon gold-bg"><FaAward /></div>
           <div className="stat-info">
-            <span className="stat-value">4</span>
+            <span className="stat-value">0</span>
             <span className="stat-label">{t('certificates')}</span>
           </div>
         </div>
         <div className="stat-card glass">
           <div className="stat-icon blue-bg"><FaClock /></div>
           <div className="stat-info">
-            <span className="stat-value">45 {t('hours')}</span>
+            <span className="stat-value">0 {t('hours')}</span>
             <span className="stat-label">{t('totalStudyTime')}</span>
           </div>
         </div>
@@ -68,26 +90,35 @@ const Dashboard = () => {
       <div className="dashboard-main-grid">
         <NPUCard title={t('recentCourses')} className="recent-courses">
           <div className="course-list">
-            {[1, 2, 3].map((i) => (
-              <div key={i} className="course-item">
-                <div className="course-thumb npu-gradient"></div>
-                <div className="course-details">
-                  <h4>{t('lang') === 'th' ? 'การเขียนโปรแกรม React เบื้องต้น' : 'Intro to React Programming'} #{i}</h4>
-                  <div className="course-progress-bar">
-                    <div className="progress-fill" style={{ width: `${i * 30}%` }}></div>
+            {courses.length > 0 ? (
+              courses.map((enrollment) => (
+                <div key={enrollment._id} className="course-item">
+                  <div className="course-thumb npu-gradient"></div>
+                  <div className="course-details">
+                    <h4>{enrollment.course.title}</h4>
+                    <div className="course-progress-bar">
+                      <div className="progress-fill" style={{ width: `${enrollment.progress}%` }}></div>
+                    </div>
+                    <span className="progress-text">เรียนไปแล้ว {enrollment.progress}%</span>
                   </div>
-                  <span className="progress-text">เรียนไปแล้ว {i * 30}%</span>
+                  <NPUButton variant="outline" size="sm" onClick={() => navigate(`/courses/${enrollment.course?._id}`)}>
+                    {t('continue')} <FaChevronRight />
+                  </NPUButton>
                 </div>
-                <NPUButton variant="outline" size="sm">{t('continue')} <FaChevronRight /></NPUButton>
+              ))
+            ) : (
+              <div className="empty-state">
+                <p>คุณยังไม่ได้ลงทะเบียนวิชาใดๆ</p>
+                <NPUButton variant="primary" size="sm" onClick={() => navigate('/courses')}>ค้นหาบทเรียน</NPUButton>
               </div>
-            ))}
+            )}
           </div>
         </NPUCard>
 
         <NPUCard title={t('studyAnalytics')} className="study-analytics">
           <div style={{ width: '100%', height: 300 }}>
             <ResponsiveContainer>
-              <BarChart data={data}>
+              <BarChart data={weekData}>
                 <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#E2E8F0" />
                 <XAxis dataKey="name" axisLine={false} tickLine={false} tick={{ fill: '#64748B', fontSize: 12 }} />
                 <YAxis axisLine={false} tickLine={false} tick={{ fill: '#64748B', fontSize: 12 }} />
