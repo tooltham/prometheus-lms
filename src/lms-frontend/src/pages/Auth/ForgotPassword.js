@@ -4,6 +4,7 @@ import { FaEnvelope, FaArrowRight, FaArrowLeft } from 'react-icons/fa';
 import API from '../../utils/api';
 import { useLanguage } from '../../store/LanguageContext';
 import { NPUButton } from '../../components/UI/UIComponents';
+import npuLogo from '../../assets/images/npu_logo.png';
 import './Auth.css';
 
 const ForgotPassword = () => {
@@ -48,7 +49,7 @@ const ForgotPassword = () => {
       <div className="auth-card glass fade-in">
         <div className="auth-header">
           <img 
-            src="https://upload.wikimedia.org/wikipedia/th/a/a3/Nakhon_Phanom_University_Logo.svg" 
+            src={npuLogo} 
             alt="NPU Logo" 
             className="auth-logo-img" 
           />

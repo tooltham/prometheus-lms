@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { FaArrowLeft } from 'react-icons/fa';
 import { NPUButton } from '../../components/UI/UIComponents';
 import { useLanguage } from '../../store/LanguageContext';
+import npuLogo from '../../assets/images/npu_logo.png';
 import './Auth.css';
 
 const WaitingForApproval = () => {
@@ -14,7 +15,7 @@ const WaitingForApproval = () => {
             <div className="auth-card glass fade-in" style={{ maxWidth: '600px' }}>
                 <div className="auth-header">
                     <img 
-                        src="https://upload.wikimedia.org/wikipedia/th/a/a3/Nakhon_Phanom_University_Logo.svg" 
+                        src={npuLogo} 
                         alt="NPU Logo" 
                         className="auth-logo-img" 
                     />
