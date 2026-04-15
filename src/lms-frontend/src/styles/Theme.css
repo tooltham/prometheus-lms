@@ -1,0 +1,77 @@
+/* NPU Premium Design System - Royal Navy & Gold */
+
+@import url('https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Core Palette (NPU Branding) */
+  --npu-navy: #0d2750;
+  --npu-navy-light: #1a3f6f;
+  --npu-gold: #c8a415;
+  --npu-gold-light: #e0c846;
+  --npu-blue-secondary: #2b6cb0;
+
+  /* Semantic Colors */
+  --bg-app: #f2f5f9;
+  --bg-surface: #ffffff;
+  --text-main: #1a2332;
+  --text-secondary: #5a6d81;
+  --border-color: #d8e1eb;
+
+  /* Status Colors */
+  --success: #00b050;
+  --warning: #ff7e00;
+  --danger: #e53e3e;
+
+  /* Glassmorphism & Effects */
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-shadow: 0 8px 32px 0 rgba(13, 39, 80, 0.08);
+  
+  /* Spacing & Borders */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+}
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', 'Sarabun', sans-serif;
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: var(--npu-navy);
+}
+
+/* UI Utilities */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+}
+
+.shadow-premium {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+}
+
+.npu-gradient {
+  background: linear-gradient(135deg, var(--npu-navy) 0%, var(--npu-navy-light) 100%);
+}
+
+.npu-gold-gradient {
+  background: linear-gradient(135deg, var(--npu-gold) 0%, var(--npu-gold-light) 100%);
+}
