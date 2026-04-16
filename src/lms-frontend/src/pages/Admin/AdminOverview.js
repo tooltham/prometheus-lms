@@ -14,19 +14,17 @@ import './AdminOverview.css';
 
 const StatCard = ({ title, value, icon, color, trend, lang }) => (
   <div className="stat-card">
-    <div className="stat-card-inner">
-      <div className="stat-info">
-        <p className="stat-title">{title}</p>
-        <h3 className="stat-value">{value}</h3>
-        {trend && (
-          <p className="stat-trend">
-            <FaArrowUp /> <span>{trend}%</span> {lang === 'th' ? 'เพิ่มขึ้น' : 'increase'}
-          </p>
-        )}
-      </div>
-      <div className="stat-icon-wrapper" style={{ backgroundColor: `${color}15`, color: color }}>
-        {icon}
-      </div>
+    <div className="stat-icon" style={{ backgroundColor: `${color}15`, color: color }}>
+      {icon}
+    </div>
+    <div className="stat-info">
+      <p className="stat-title">{title}</p>
+      <h3 className="stat-value">{value}</h3>
+      {trend && (
+        <span className="stat-trend">
+          <FaArrowUp /> {trend}% {lang === 'th' ? 'เดือนนี้' : 'this month'}
+        </span>
+      )}
     </div>
   </div>
 );
@@ -77,7 +75,18 @@ const AdminOverview = () => {
 
   return (
     <div className="admin-overview fade-in">
-      {/* Stats Grid */}
+      {/* Welcome Section */}
+      <div className="admin-welcome-section">
+        <div className="welcome-text">
+          <h1>{lang === 'th' ? 'สวัสดีครับผู้ดูแลระบบ' : 'Hello, Administrator'} 👋</h1>
+          <p>{lang === 'th' ? 'นี่คือภาพรวมของระบบและสถานะการดำเนินการในขณะนี้' : 'Here is an overview of the system status and current operations.'}</p>
+        </div>
+        <div className="welcome-date">
+          <span>{new Date().toLocaleDateString(lang === 'th' ? 'th-TH' : 'en-US', { day: 'numeric', month: 'long', year: 'numeric' })}</span>
+        </div>
+      </div>
+
+      {/* Stats Grid - Aligned with Instructor Style */}
       <div className="stats-grid">
         <StatCard 
           title={lang === 'th' ? 'ผู้ใช้งานทั้งหมด' : 'Total Users'} 
@@ -91,14 +100,14 @@ const AdminOverview = () => {
           title={lang === 'th' ? 'นักศึกษา' : 'Students'} 
           value={stats.totalStudents} 
           icon={<FaUserGraduate />} 
-          color="#1565c0" 
+          color="#b59545" 
           lang={lang}
         />
         <StatCard 
           title={lang === 'th' ? 'ผู้สอน' : 'Instructors'} 
           value={stats.totalInstructors} 
           icon={<FaChalkboardTeacher />} 
-          color="#00838f" 
+          color="#0d2750" 
           lang={lang}
         />
         <StatCard 
