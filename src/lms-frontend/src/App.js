@@ -39,8 +39,17 @@ function App() {
         <Route path="profile" element={<ProfilePage />} />
         <Route path="settings" element={<SettingsPage />} />
         <Route path="instructor" element={<InstructorPortal />} />
-        <Route path="admin/*" element={<AdminPanel />} />
       </Route>
+      
+      {/* Admin routes - using its own dedicated AdminLayout (inside AdminPanel) */}
+      <Route
+        path="/admin/*"
+        element={
+          <PrivateRoute roles={['admin']}>
+            <AdminPanel />
+          </PrivateRoute>
+        }
+      />
 
       {/* 404 Route */}
       <Route path="*" element={
