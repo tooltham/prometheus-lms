@@ -6,13 +6,13 @@ import ForgotPassword from './pages/Auth/ForgotPassword';
 import WaitingForApproval from './pages/Auth/WaitingForApproval';
 import MainLayout from './components/Layout/MainLayout';
 import PrivateRoute from './components/PrivateRoute';
-import Dashboard from './pages/Dashboard/Dashboard';
 import CoursesPage from './pages/Courses/CoursesPage';
 import CourseDetail from './pages/Courses/CourseDetail';
 import ProfilePage from './pages/Profile/ProfilePage';
 import SettingsPage from './pages/Settings/SettingsPage';
 import InstructorPortal from './pages/Instructor/InstructorPortal';
 import AdminPanel from './pages/Admin/AdminPanel';
+import StudentPortal from './pages/Student/StudentPortal';
 
 function App() {
   return (
@@ -32,13 +32,23 @@ function App() {
           </PrivateRoute>
         }
       >
-        <Route index element={<Navigate to="/dashboard" replace />} />
-        <Route path="dashboard" element={<Dashboard />} />
+        <Route index element={<Navigate to="/student/overview" replace />} />
+        <Route path="dashboard" element={<Navigate to="/student/overview" replace />} />
         <Route path="courses" element={<CoursesPage />} />
         <Route path="courses/:id" element={<CourseDetail />} />
         <Route path="profile" element={<ProfilePage />} />
         <Route path="settings" element={<SettingsPage />} />
       </Route>
+      
+      {/* Student routes */}
+      <Route
+        path="/student/*"
+        element={
+          <PrivateRoute roles={['student']}>
+            <StudentPortal />
+          </PrivateRoute>
+        }
+      />
       
       {/* Instructor routes - using its own dedicated InstructorLayout (inside InstructorPortal) */}
       <Route

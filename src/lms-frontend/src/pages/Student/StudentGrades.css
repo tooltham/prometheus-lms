@@ -1,0 +1,199 @@
+.student-grades {
+  padding-bottom: 2rem;
+}
+
+.download-btn {
+  background: white;
+  color: #0d2750;
+  border: 1px solid #0d2750;
+  padding: 0.85rem 1.75rem;
+  border-radius: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.download-btn:hover {
+  background: #0d2750;
+  color: white;
+}
+
+/* GPA Banner */
+.gpa-banner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.gpa-card {
+  background: linear-gradient(135deg, #0d2750 0%, #061630 100%);
+  padding: 2rem;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  color: white;
+}
+
+.gpa-card.secondary {
+  background: linear-gradient(135deg, #b59545 0%, #8a6d2a 100%);
+  color: #0d2750;
+}
+
+.gpa-card.secondary .label {
+  color: rgba(13, 39, 80, 0.7);
+}
+
+.gpa-card.secondary .value {
+  color: #0d2750;
+}
+
+.gpa-icon {
+  font-size: 3rem;
+  opacity: 0.8;
+}
+
+.gpa-info .label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 0.25rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.gpa-info .value {
+  font-size: 2.2rem;
+  font-weight: 800;
+}
+
+/* Table */
+.grades-table-container {
+  background: white;
+  border-radius: 25px;
+  border: 1px solid #eef2f6;
+  padding: 1.5rem;
+  margin-bottom: 2.5rem;
+  overflow-x: auto;
+}
+
+.pro-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.pro-table th {
+  text-align: left;
+  padding: 1.25rem 1rem;
+  border-bottom: 2px solid #f1f5f9;
+  color: #94a3b8;
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.pro-table td {
+  padding: 1.5rem 1rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.course-cell strong {
+  display: block;
+  font-size: 1rem;
+  color: #1e293b;
+  margin-bottom: 0.25rem;
+}
+
+.course-cell span {
+  font-size: 0.8rem;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+.grade-badge {
+  display: inline-flex;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+
+.grade-badge.gold {
+  background: rgba(181, 149, 69, 0.1);
+  color: #b59545;
+  border: 1px solid rgba(181, 149, 69, 0.2);
+}
+
+.status-pill {
+  padding: 0.4rem 1rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.status-pill.success {
+  background: #f0fdf4;
+  color: #22c55e;
+}
+
+.empty-cell {
+  text-align: center;
+  padding: 4rem 0 !important;
+  color: #cbd5e1;
+}
+
+.empty-cell svg {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+/* Feedback */
+.feedback-section h3 {
+  font-size: 1.5rem;
+  color: #0d2750;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+}
+
+.feedback-card {
+  background: #f8fafc;
+  padding: 2rem;
+  border-radius: 20px;
+  border-left: 5px solid #b59545;
+}
+
+.card-top {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 1rem;
+  color: #e2e8f0;
+}
+
+.star-active {
+  color: #b59545;
+}
+
+.feedback-card p {
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #334155;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.card-footer span {
+  font-weight: 700;
+  color: #64748b;
+  font-size: 0.9rem;
+}

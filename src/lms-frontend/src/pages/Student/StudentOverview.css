@@ -1,0 +1,235 @@
+.student-overview {
+  padding-bottom: 2rem;
+}
+
+.student-welcome-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2rem;
+}
+
+.welcome-text h1 {
+  font-size: 2rem;
+  color: #0d2750;
+  margin: 0;
+  font-weight: 800;
+}
+
+.welcome-text p {
+  color: #64748b;
+  margin: 0.5rem 0 0 0;
+  font-weight: 500;
+}
+
+.welcome-date {
+  background: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  font-weight: 700;
+  color: #b59545;
+  font-size: 0.9rem;
+}
+
+/* Stats Grid - Using the standardized inst-stat-card classes for consistency */
+.inst-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.student-dashboard-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+
+.student-card {
+  background: white;
+  border-radius: 25px;
+  padding: 2rem;
+  border: 1px solid #eef2f6;
+  height: 100%;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.card-header h3 {
+  margin: 0;
+  color: #0d2750;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.text-btn {
+  background: none;
+  border: none;
+  color: #b59545;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+/* Course Progress Items */
+.course-progress-item {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 1rem;
+  border-radius: 15px;
+  background: #f8fafc;
+  margin-bottom: 1rem;
+  transition: all 0.2s;
+}
+
+.course-progress-item:hover {
+  background: #f1f5f9;
+}
+
+.course-thumb-mini {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #0d2750 0%, #b59545 100%);
+  flex-shrink: 0;
+}
+
+.course-progress-details {
+  flex: 1;
+}
+
+.progress-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.progress-label-row h4 {
+  margin: 0;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.progress-label-row span {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: #b59545;
+}
+
+.pro-progress-bar {
+  height: 6px;
+  background: #e2e8f0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.pro-progress-bar .fill {
+  height: 100%;
+  background: #b59545;
+  border-radius: 10px;
+}
+
+.continue-icon-btn {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  border: 1px solid #e2e8f0;
+  background: white;
+  color: #0d2750;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.continue-icon-btn:hover {
+  background: #0d2750;
+  color: white;
+  border-color: #0d2750;
+}
+
+/* Side Column Items */
+.highlight-card {
+  background: linear-gradient(135deg, #0d2750 0%, #061630 100%);
+  color: white;
+}
+
+.highlight-card h3 {
+  color: var(--npu-gold);
+}
+
+.deadline-item {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem;
+  border-radius: 15px;
+}
+
+.deadline-date {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  color: #0d2750;
+  padding: 0.5rem;
+  border-radius: 10px;
+  min-width: 50px;
+}
+
+.deadline-date .day {
+  font-size: 1.2rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.deadline-date .month {
+  font-size: 0.65rem;
+  font-weight: 700;
+}
+
+.deadline-info h4 {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.deadline-info p {
+  margin: 0;
+  font-size: 0.75rem;
+  opacity: 0.7;
+}
+
+.action-btn-gold {
+  background: #b59545;
+  color: #0d2750;
+  border: none;
+  padding: 0.8rem;
+  border-radius: 10px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.action-btn-gold:hover {
+  background: #d4b56a;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1200px) {
+  .student-dashboard-content {
+    grid-template-columns: 1fr;
+  }
+}
