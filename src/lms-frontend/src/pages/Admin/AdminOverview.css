@@ -1,0 +1,253 @@
+.admin-overview {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid #eef2f6;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(13, 39, 80, 0.1);
+  border-color: var(--npu-gold);
+}
+
+.stat-card-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stat-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-value {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0d2750;
+  margin: 0;
+}
+
+.stat-trend {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #2e7d32;
+  margin-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.stat-icon-wrapper {
+  width: 55px;
+  height: 55px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+/* Dashboard Row */
+.dashboard-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+}
+
+.dashboard-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border: 1px solid #eef2f6;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header {
+  padding: 1.5rem;
+  border-bottom: 1px solid #f0f4f8;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-header h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0d2750;
+  margin: 0;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.badge-pending {
+  background: #fff3e0;
+  color: #ef6c00;
+  padding: 0.25rem 0.75rem;
+  border-radius: 50px;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+/* Table Enhancements */
+.table-responsive {
+  overflow-x: auto;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-table th {
+  text-align: left;
+  padding: 1rem;
+  color: #78909c;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.admin-table td {
+  padding: 1rem;
+  border-top: 1px solid #f0f4f8;
+  vertical-align: middle;
+}
+
+.user-info-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.user-avatar-small {
+  width: 32px;
+  height: 32px;
+  background: #0d2750;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.text-muted {
+  color: #90a4ae;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* System Status Items */
+.status-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background: #f8fafc;
+  border-radius: 12px;
+  margin-bottom: 0.75rem;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.status-dot.online {
+  background: #4caf50;
+  box-shadow: 0 0 10px rgba(76, 175, 80, 0.4);
+}
+
+.status-info {
+  flex: 1;
+}
+
+.status-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #455a64;
+  margin: 0;
+}
+
+.status-value {
+  font-size: 0.75rem;
+  color: #78909c;
+  margin: 0;
+}
+
+.status-ms {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #4caf50;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  color: #b0bec5;
+  gap: 1rem;
+}
+
+.empty-state svg {
+  font-size: 3rem;
+  color: #e0e0e0;
+}
+
+.admin-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  font-size: 1.2rem;
+  color: #0d2750;
+  font-weight: 600;
+}
+
+/* Fade In Animation */
+.fade-in {
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 1200px) {
+  .dashboard-row {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,291 @@
+.admin-user-mgmt {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.mgmt-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.header-title h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #0d2750;
+  margin: 0;
+}
+
+.header-title p {
+  color: #78909c;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+/* Control Bar */
+.control-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1.5rem;
+  background: white;
+  padding: 1rem;
+  border-radius: 15px;
+  border: 1px solid #eef2f6;
+}
+
+.search-box {
+  flex: 1;
+  position: relative;
+  max-width: 400px;
+}
+
+.search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #90a4ae;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 2.8rem;
+  border: 1px solid #e0e6ed;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+}
+
+.search-box input:focus {
+  border-color: var(--npu-gold);
+  box-shadow: 0 0 0 4px rgba(181, 149, 69, 0.1);
+  outline: none;
+}
+
+.filters {
+  display: flex;
+  gap: 1rem;
+}
+
+.filter-select {
+  padding: 0.75rem 1.5rem;
+  border: 1px solid #e0e6ed;
+  border-radius: 10px;
+  background: white;
+  font-size: 0.9rem;
+  color: #455a64;
+  cursor: pointer;
+}
+
+.pending-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.75rem 1.25rem;
+  border-radius: 10px;
+  border: 1px solid #e0e6ed;
+  background: white;
+  color: #455a64;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.pending-toggle.active {
+  background: #fff3e0;
+  border-color: #ffb74d;
+  color: #f57c00;
+}
+
+/* Table Container */
+.table-container {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid #eef2f6;
+}
+
+.pro-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.pro-table th {
+  background: #f8fafc;
+  padding: 1.25rem 1.5rem;
+  text-align: left;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.pro-table td {
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: middle;
+}
+
+.pro-table tr:last-child td {
+  border-bottom: none;
+}
+
+.pro-table tr:hover {
+  background: #f8fafc;
+}
+
+/* User Profile Cell */
+.user-profile-cell {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.avatar-circle {
+  width: 45px;
+  height: 45px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+.avatar-circle.admin { background: linear-gradient(135deg, #ef5350 0%, #c62828 100%); }
+.avatar-circle.instructor { background: linear-gradient(135deg, #ffa726 0%, #ef6c00 100%); }
+.avatar-circle.student { background: linear-gradient(135deg, #42a5f5 0%, #1565c0 100%); }
+
+.user-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-weight: 700;
+  color: #0d2750;
+  font-size: 1rem;
+}
+
+.user-email {
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+.user-id-tag {
+  font-size: 0.7rem;
+  font-family: monospace;
+  background: #f1f5f9;
+  padding: 2px 6px;
+  border-radius: 4px;
+  margin-top: 4px;
+  color: #475569;
+  width: fit-content;
+}
+
+/* Badges */
+.role-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0.4rem 0.8rem;
+  border-radius: 8px;
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.role-badge.admin { background: #fee2e2; color: #991b1b; }
+.role-badge.instructor { background: #fff7ed; color: #9a3412; }
+.role-badge.student { background: #eff6ff; color: #1e40af; }
+
+.dept-cell {
+  display: flex;
+  flex-direction: column;
+}
+
+.dept-name {
+  font-weight: 600;
+  color: #334155;
+  font-size: 0.9rem;
+}
+
+.edu-level {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+/* Status Indicator */
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.status-indicator .dot {
+  font-size: 0.6rem;
+}
+
+.status-indicator.approved { color: #16a34a; }
+.status-indicator.approved .dot { color: #22c55e; filter: drop-shadow(0 0 4px #22c55e); }
+
+.status-indicator.pending { color: #d97706; }
+.status-indicator.pending .dot { color: #fbbf24; filter: drop-shadow(0 0 4px #fbbf24); }
+
+/* Action Buttons */
+.action-btns {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.action-btns button {
+  width: 35px;
+  height: 35px;
+  border-radius: 10px;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.9rem;
+}
+
+.btn-approve {
+  background: #f0fdf4;
+  color: #16a34a;
+}
+
+.btn-approve:hover {
+  background: #16a34a;
+  color: white;
+}
+
+.btn-edit {
+  background: #f0f9ff;
+  color: #0284c7;
+}
+
+.btn-edit:hover {
+  background: #0284c7;
+  color: white;
+}
+
+.btn-delete {
+  background: #fef2f2;
+  color: #dc2626;
+}
+
+.btn-delete:hover {
+  background: #dc2626;
+  color: white;
+}

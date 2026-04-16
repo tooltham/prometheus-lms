@@ -39,7 +39,7 @@ function App() {
         <Route path="profile" element={<ProfilePage />} />
         <Route path="settings" element={<SettingsPage />} />
         <Route path="instructor" element={<InstructorPortal />} />
-        <Route path="admin" element={<AdminPanel />} />
+        <Route path="admin/*" element={<AdminPanel />} />
       </Route>
 
       {/* 404 Route */}
