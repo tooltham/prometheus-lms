@@ -13,19 +13,20 @@ import { useLanguage } from '../../store/LanguageContext';
 import './AdminOverview.css';
 
 const StatCard = ({ title, value, icon, color, trend, lang }) => (
-  <div className="stat-card">
-    <div className="stat-icon" style={{ backgroundColor: `${color}15`, color: color }}>
+  <div className="inst-stat-card">
+    <div className="inst-stat-icon" style={{ backgroundColor: `${color}15`, color: color }}>
       {icon}
     </div>
-    <div className="stat-info">
-      <p className="stat-title">{title}</p>
-      <h3 className="stat-value">{value}</h3>
+    <div className="inst-stat-info">
+      <p className="inst-stat-title">{title}</p>
+      <h3 className="inst-stat-value">{value}</h3>
       {trend && (
-        <span className="stat-trend">
+        <span className="inst-stat-trend">
           <FaArrowUp /> {trend}% {lang === 'th' ? 'เดือนนี้' : 'this month'}
         </span>
       )}
     </div>
+    <button className="inst-stat-more"><FaClock /></button>
   </div>
 );
 
