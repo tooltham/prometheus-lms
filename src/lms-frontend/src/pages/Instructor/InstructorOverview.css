@@ -28,7 +28,7 @@
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
   font-weight: 700;
-  color: #3282b8;
+  color: #b59545;
   font-size: 0.9rem;
 }
 
@@ -135,7 +135,7 @@
 .text-btn {
   background: none;
   border: none;
-  color: #3282b8;
+  color: #b59545;
   font-weight: 700;
   font-size: 0.85rem;
   cursor: pointer;
@@ -164,7 +164,7 @@
   font-size: 1.2rem;
 }
 
-.activity-icon.student { background: #e0f2fe; color: #0ea5e9; }
+.activity-icon.student { background: #fdf6e3; color: #b59545; }
 .activity-icon.task { background: #f0fdf4; color: #22c55e; }
 
 .activity-details p {
@@ -190,7 +190,7 @@
 
 .bar {
   flex: 1;
-  background: #3282b8;
+  background: #0d2750;
   border-radius: 4px 4px 0 0;
   opacity: 0.8;
   transition: opacity 0.2s;
@@ -198,7 +198,9 @@
 
 .bar:hover {
   opacity: 1;
+  background: #b59545;
 }
+
 
 .chart-label {
   font-size: 0.85rem;

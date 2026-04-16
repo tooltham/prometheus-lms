@@ -24,8 +24,8 @@
 
 .export-btn {
   background: white;
-  color: #0f4c75;
-  border: 1px solid #dbe2ef;
+  color: #0d2750;
+  border: 1px solid #e0e6ed;
   padding: 0.75rem 1.5rem;
   border-radius: 12px;
   font-weight: 700;
@@ -38,7 +38,8 @@
 
 .export-btn:hover {
   background: #f0f4f8;
-  border-color: #3282b8;
+  border-color: #b59545;
+  color: #b59545;
 }
 
 /* Tabs */
@@ -65,7 +66,7 @@
 }
 
 .tab-item.active {
-  color: #0f4c75;
+  color: #0d2750;
 }
 
 .tab-item.active::after {
@@ -75,7 +76,7 @@
   left: 0;
   width: 100%;
   height: 3px;
-  background: #0f4c75;
+  background: #0d2750;
   border-radius: 10px;
 }
 
@@ -103,6 +104,11 @@
   flex: 1;
 }
 
+.students-controls .search-box input:focus {
+  border-color: #b59545;
+  box-shadow: 0 0 0 4px rgba(181, 149, 69, 0.1);
+}
+
 .filter-btn {
   background: white;
   border: 1px solid #e2e8f0;
@@ -114,6 +120,11 @@
   align-items: center;
   gap: 8px;
   cursor: pointer;
+}
+
+.filter-btn:hover {
+  border-color: #b59545;
+  color: #b59545;
 }
 
 /* Pro Table */
@@ -155,7 +166,7 @@
   width: 40px;
   height: 40px;
   background: #f1f5f9;
-  color: #0f4c75;
+  color: #0d2750;
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -241,8 +252,8 @@
 
 .icon-btn:hover {
   background: #f0f4f8;
-  color: #0f4c75;
-  border-color: #3282b8;
+  color: #0d2750;
+  border-color: #b59545;
 }
 
 /* Pending Registration Cards */
@@ -275,7 +286,7 @@
   width: 50px;
   height: 50px;
   border-radius: 15px;
-  background: linear-gradient(135deg, #3282b8 0%, #0f4c75 100%);
+  background: linear-gradient(135deg, #b59545 0%, #0d2750 100%);
   color: white;
   display: flex;
   align-items: center;
@@ -283,6 +294,7 @@
   font-size: 1.5rem;
   font-weight: 800;
 }
+
 
 .pending-title h3 {
   margin: 0;

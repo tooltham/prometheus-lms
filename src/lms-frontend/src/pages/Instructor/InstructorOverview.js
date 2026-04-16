@@ -85,7 +85,7 @@ const InstructorOverview = () => {
           title={lang === 'th' ? 'นักเรียนทั้งหมด' : 'Total Students'} 
           value={stats.totalStudents} 
           icon={<FaUsers />} 
-          color="#3282b8" 
+          color="#b59545" 
           trend={8}
           lang={lang}
         />
@@ -93,14 +93,14 @@ const InstructorOverview = () => {
           title={lang === 'th' ? 'คอร์สที่สอน' : 'Active Courses'} 
           value={stats.activeCourses} 
           icon={<FaBookOpen />} 
-          color="#0f4c75" 
+          color="#0d2750" 
           lang={lang}
         />
         <StatCard 
           title={lang === 'th' ? 'ความคืบหน้าเฉลี่ย' : 'Avg. Progress'} 
           value={`${stats.avgProgress}%`} 
           icon={<FaChartLine />} 
-          color="#1b262c" 
+          color="#0d2750" 
           lang={lang}
         />
         <StatCard 
