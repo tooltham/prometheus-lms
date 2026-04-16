@@ -235,6 +235,37 @@
   margin: 0;
 }
 
+.top-nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.lang-toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: white;
+  border: 1px solid #e0e6ed;
+  padding: 0.5rem 1rem;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: #0d2750;
+  transition: all 0.2s ease;
+}
+
+.lang-toggle-btn:hover {
+  background: #f4f7fa;
+  border-color: var(--npu-gold);
+  color: var(--npu-gold);
+}
+
+.lang-toggle-btn svg {
+  color: var(--npu-gold);
+}
+
 .admin-profile-badge {
   display: flex;
   align-items: center;

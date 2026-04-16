@@ -9,7 +9,8 @@ import {
   FaBars, 
   FaTimes,
   FaChevronRight,
-  FaUserShield
+  FaUserShield,
+  FaGlobe
 } from 'react-icons/fa';
 import { useLanguage } from '../../store/LanguageContext';
 import './AdminLayout.css';
@@ -17,7 +18,7 @@ import npuLogo from '../../assets/images/npu_logo.png';
 
 const AdminLayout = ({ children }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-  const { lang } = useLanguage();
+  const { lang, setLang } = useLanguage();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -25,6 +26,10 @@ const AdminLayout = ({ children }) => {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
     navigate('/login');
+  };
+
+  const toggleLanguage = () => {
+    setLang(lang === 'th' ? 'en' : 'th');
   };
 
   const user = JSON.parse(localStorage.getItem('user') || '{}');
@@ -104,6 +109,10 @@ const AdminLayout = ({ children }) => {
           </div>
 
           <div className="top-nav-right">
+            <button className="lang-toggle-btn" onClick={toggleLanguage}>
+              <FaGlobe />
+              <span>{lang === 'th' ? 'EN' : 'ไทย'}</span>
+            </button>
             <div className="admin-profile-badge">
               <div className="badge-info">
                 <span className="badge-name">{user.firstName} {user.lastName}</span>
