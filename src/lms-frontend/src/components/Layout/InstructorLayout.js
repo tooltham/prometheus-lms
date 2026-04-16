@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { 
-  FaChalkboardTeacher, 
   FaBook, 
   FaUsers, 
   FaStar, 
@@ -9,7 +8,8 @@ import {
   FaBars, 
   FaTimes,
   FaChevronRight,
-  FaGlobe
+  FaGlobe,
+  FaThLarge
 } from 'react-icons/fa';
 import { useLanguage } from '../../store/LanguageContext';
 import './InstructorLayout.css';
@@ -36,8 +36,8 @@ const InstructorLayout = ({ children }) => {
   const menuItems = [
     { 
       path: '/instructor/overview', 
-      icon: <FaChalkboardTeacher />, 
-      label: lang === 'th' ? 'แดชบอร์ดผู้สอน' : 'Instructor Dashboard' 
+      icon: <FaThLarge />, 
+      label: lang === 'th' ? 'ภาพรวมระบบ' : 'System Overview' 
     },
     { 
       path: '/instructor/courses', 
