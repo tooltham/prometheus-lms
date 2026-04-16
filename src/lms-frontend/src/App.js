@@ -38,7 +38,7 @@ function App() {
         <Route path="courses/:id" element={<CourseDetail />} />
         <Route path="profile" element={<ProfilePage />} />
         <Route path="settings" element={<SettingsPage />} />
-        <Route path="instructor" element={<InstructorPortal />} />
+        <Route path="instructor/*" element={<InstructorPortal />} />
       </Route>
       
       {/* Admin routes - using its own dedicated AdminLayout (inside AdminPanel) */}

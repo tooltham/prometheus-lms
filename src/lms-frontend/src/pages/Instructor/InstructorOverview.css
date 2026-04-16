@@ -1,0 +1,215 @@
+.instructor-overview {
+  padding-bottom: 2rem;
+}
+
+.inst-welcome-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 2rem;
+}
+
+.welcome-text h1 {
+  font-size: 2rem;
+  color: #0d2750;
+  margin: 0;
+  font-weight: 800;
+}
+
+.welcome-text p {
+  color: #64748b;
+  margin: 0.5rem 0 0 0;
+  font-weight: 500;
+}
+
+.welcome-date {
+  background: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  font-weight: 700;
+  color: #3282b8;
+  font-size: 0.9rem;
+}
+
+/* Stats Grid */
+.inst-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.inst-stat-card {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  position: relative;
+  transition: all 0.3s ease;
+  border: 1px solid #eef2f6;
+}
+
+.inst-stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(13, 39, 80, 0.08);
+}
+
+.inst-stat-icon {
+  width: 55px;
+  height: 55px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.inst-stat-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.25rem;
+}
+
+.inst-stat-value {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #0d2750;
+  margin: 0;
+}
+
+.inst-stat-trend {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #10b981;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.inst-stat-more {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: #cbd5e1;
+  cursor: pointer;
+}
+
+/* Dashboard Content */
+.inst-dashboard-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+
+.inst-card {
+  background: white;
+  border-radius: 25px;
+  padding: 2rem;
+  border: 1px solid #eef2f6;
+  height: 100%;
+}
+
+.inst-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.inst-card-header h3 {
+  margin: 0;
+  color: #0d2750;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.text-btn {
+  background: none;
+  border: none;
+  color: #3282b8;
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+/* Activity List */
+.activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.activity-item {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.activity-icon {
+  width: 45px;
+  height: 45px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.activity-icon.student { background: #e0f2fe; color: #0ea5e9; }
+.activity-icon.task { background: #f0fdf4; color: #22c55e; }
+
+.activity-details p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #334155;
+}
+
+.activity-details span {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  font-weight: 500;
+}
+
+/* Mini Chart UI (Dummy) */
+.mini-chart-dummy {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  height: 150px;
+  padding: 1rem 0;
+}
+
+.bar {
+  flex: 1;
+  background: #3282b8;
+  border-radius: 4px 4px 0 0;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.bar:hover {
+  opacity: 1;
+}
+
+.chart-label {
+  font-size: 0.85rem;
+  color: #64748b;
+  text-align: center;
+  margin-top: 1rem;
+  font-weight: 600;
+}
+
+@media (max-width: 1200px) {
+  .inst-dashboard-content {
+    grid-template-columns: 1fr;
+  }
+}
