@@ -9,7 +9,7 @@ import {
   FaTimes,
   FaChevronRight,
   FaGlobe,
-  FaThLarge
+  FaChartLine
 } from 'react-icons/fa';
 import { useLanguage } from '../../store/LanguageContext';
 import './InstructorLayout.css';
@@ -36,8 +36,8 @@ const InstructorLayout = ({ children }) => {
   const menuItems = [
     { 
       path: '/instructor/overview', 
-      icon: <FaThLarge />, 
-      label: lang === 'th' ? 'ภาพรวมระบบ' : 'System Overview' 
+      icon: <FaChartLine />, 
+      label: lang === 'th' ? 'ภาพรวมระบบ' : 'Overview' 
     },
     { 
       path: '/instructor/courses', 
